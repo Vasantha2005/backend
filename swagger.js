@@ -11,7 +11,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.BASE_URL || "http://localhost:5000",
+        url: process.env.BASE_URL || "http://localhost:5000", // Dynamically uses BASE_URL
         description: "API Server",
       },
     ],
@@ -36,7 +36,7 @@ const options = {
             date: { type: "string", format: "date" },
             images: {
               type: "array",
-              items: { type: "string", format: "uri" }, // assuming URLs
+              items: { type: "string", format: "uri" },
               description: "List of image URLs",
             },
           },
