@@ -1,5 +1,4 @@
-const swaggerJSDoc = require("swagger-jsdoc");
-require("dotenv").config();
+const swaggerJSDoc = require('swagger-jsdoc');
 
 const options = {
   definition: {
@@ -11,8 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.BASE_URL || "http://localhost:5000", // Dynamically uses BASE_URL
-        description: "API Server",
+        url: "https://backend-production-75fa.up.railway.app", // ✅ Use your live server URL
       },
     ],
     components: {
@@ -36,16 +34,17 @@ const options = {
             date: { type: "string", format: "date" },
             images: {
               type: "array",
-              items: { type: "string", format: "uri" },
-              description: "List of image URLs",
+              items: { type: "string", format: "binary" },
+              description: "List of image URLs or uploaded image files",
             },
           },
         },
       },
     },
   },
-  apis: ["./routes/*.js"],
+  apis: ["./routes/*.js"], // Path to your routes
 };
 
 const swaggerSpec = swaggerJSDoc(options);
+
 module.exports = swaggerSpec;
