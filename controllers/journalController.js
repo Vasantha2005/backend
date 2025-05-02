@@ -2,7 +2,7 @@ const Journal = require("../models/journalModel");
 
 // Create a new journal entry
 const path = require("path");
-const Journal = require("../models/Journal");
+
 
 const createJournal = async (req, res) => {
   try {
