@@ -1,4 +1,4 @@
-const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerJSDoc = require('swagger-jsdoc');
 
 const options = {
   definition: {
@@ -10,10 +10,9 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
+        url: "https://backend-production-75fa.up.railway.app", // Ensure the correct URL is used for your local or production server
       },
     ],
-    
     components: {
       schemas: {
         UserSignup: {
@@ -43,7 +42,7 @@ const options = {
       },
     },
   },
-  apis: ["./routes/*.js"],
+  apis: ["./routes/*.js"], // Path to your routes
 };
 
 const swaggerSpec = swaggerJSDoc(options);
