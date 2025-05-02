@@ -9,8 +9,9 @@ const createJournal = async (req, res) => {
     const { title, description, date } = req.body;
     
     // If images are uploaded, we create an array of image URLs
-    const imageUrls = req.files.map(file => `http://localhost:5000/uploads/${file.filename}`);
-
+    const baseUrl = `${req.protocol}://${req.get("host")}`;
+    const imageUrls = req.files.map(file => `${baseUrl}/uploads/${file.filename}`);
+    
     const newJournal = await Journal.create({
       title,
       description,
