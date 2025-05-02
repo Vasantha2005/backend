@@ -27,8 +27,8 @@ sequelize
   .then(() => {
     console.log("✅ Database connected & synced");
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(`🚀 Server running on http://localhost:${PORT}`);
-      console.log(`📚 Swagger docs at http://localhost:${PORT}/api-docs`);
+      console.log(`🚀 Server running on http://backend-production-75fa.up.railway.app`);
+      console.log(`📚 Swagger docs at http://backend-production-75fa.up.railway.app/api-docs`);
     });
   })
   .catch((err) => console.error("❌ DB error:", err));
